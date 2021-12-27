@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <masterLabel>LeadChecker2k</masterLabel>
+    <description>This component was created by J.Dean to test out the wire service, retrieving data from an object on the current reference page, updating it, and showing at toast message.</description>
+    <targets>
+        <target>lightning__RecordPage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__RecordPage">
+            <property name="toastTitle" label="Toast Title" type="String" required="true" default="Success!" description="Use this input to input the title of your toast message to display on success (typically - Success!)."/>
+            <property name="toastBody" label="Toast Body" type="String" required="true" default="You succcessfully updated your lead using Lead Checker 2000!" description="Use this input to input the body of your toast message to display on success (typically - you did it!)."/>
+        </targetConfig>
+ </targetConfigs>
+</LightningComponentBundle>

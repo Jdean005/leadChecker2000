@@ -1,0 +1,16 @@
+<template>
+    <lightning-card> 
+        <h3 slot="title">
+            <lightning-icon icon-name="utility:connected_apps" size="small"></lightning-icon>
+            Lead Checker 2000
+        </h3>
+            <lightning-record-form
+            record-id={recordId}
+            object-api-name={objectApiName}
+            fields={fields}
+            columns="2"
+            onsuccess={handleSuccess}
+            mode="edit">
+            </lightning-record-form>
+</lightning-card>
+</template>
