@@ -66,11 +66,16 @@ lead;
 
     // WIP for counting percentage completion
     handleChange(event){
-        this.completionValue = 0;
-        if(this.lead.data.fields.FirstName.value != null ){
-            this.completionValue ++;
-        } 
-        this.completionvalue = this.completionvalue * 12.5;
+        var total =0;
+        const totalfields = this.template.querySelectorAll(
+            'lightning-input-field'
+        );
+        if(totalfields){
+            totalfields.forEach(field => {
+                total++;
+            });
+        }
+        this.completionValue = total*12.5
     }
     // handle success is leveraged in the update lead button in the html file and used to power the toast option
     handleSuccess(event) {
