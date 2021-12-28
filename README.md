@@ -1,7 +1,7 @@
 # leadChecker2000
 Record page LWC - can be used in the Lead Record Page in the Lightning Record Page editor. In theory, you can use it in other places as well, but it will fail -- trust me. 
 
-**The purpose of this project was to get familiar with LWC in LRP, leveraging wire services, and getting familiar with admin configurable toast messages**
+**The purpose of this project was to get familiar with LWC in LRP, leveraging wire services, and getting familiar with event handlers such as handlechange and handleSuccess**
 
 Functionality: 
 
