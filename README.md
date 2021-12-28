@@ -13,19 +13,27 @@ Functionality:
   e. Lead Source
   f. Lead Industry
   g. Lead Company
+  h. Lead Phone
 
 2. Admin user can drag and drop component anywhere on the Lead Lightning Record Page. 
     a. In the configuration menu the admin can enter the text they would like for the toast message to be displayed on success:
-         i. Toast Title - The front messsage part of the toast message (IE: the header) 
+          i. Toast Title - The front messsage part of the toast message (IE: the header) 
          ii. Toast Body - The remainder of the toast message 
+        iii. Component Title - title displayed on LWC between Lightning Bolts.
+        
+3. User can update lead from component and have record saved. 
 
 
 **Component**
-![image](https://user-images.githubusercontent.com/58155079/147495653-c2d1aad0-de0b-46a2-9c2d-951b8e49c05d.png)
+![image](https://user-images.githubusercontent.com/58155079/147593905-155534ed-ffb7-4f2a-8d99-273c2b3d36ca.png)
 
-**Configuration (Toast)**
-![image](https://user-images.githubusercontent.com/58155079/147495873-6805eeaf-62a7-4a4e-b414-5cfa24aa7779.png)
+**Configuration (Toast and Title of LWC)**
+![image](https://user-images.githubusercontent.com/58155079/147594013-6b24c253-edf5-4718-b014-189767b0d3f2.png)
 
 
 **Example Toast Message**
-![image](https://user-images.githubusercontent.com/58155079/147495780-944296de-a487-428c-8e3f-f8d96a519c5f.png)
+![image](https://user-images.githubusercontent.com/58155079/147594301-22ff1d2d-db6b-4ec3-b8d2-46f8c37d848f.png)
+
+
+
+
