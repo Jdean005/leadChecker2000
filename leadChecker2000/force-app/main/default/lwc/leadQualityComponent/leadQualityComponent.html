@@ -1,16 +1,55 @@
 <template>
     <lightning-card> 
-        <h3 slot="title">
-            <lightning-icon icon-name="utility:connected_apps" size="small"></lightning-icon>
-            Lead Checker 2000
-        </h3>
-            <lightning-record-form
+        <div id="inverse" class="row dark-background slds-box slds-text-heading_large" align="center">
+            <p style="font-weight:bold;text-align:center;">
+                {componentTitle}
+            <span style="font-weight:bold;float:left;"><lightning-icon icon-name="utility:connected_apps" size="large" variant="inverse" title="large size"></lightning-icon></span>
+            <span style="font-weight:bold;float:right;"><lightning-icon icon-name="utility:connected_apps" size="large" variant="inverse" title="large size"></lightning-icon></span>
+            </p>
+           </div>   
+            <lightning-record-edit-form
             record-id={recordId}
             object-api-name={objectApiName}
-            fields={fields}
-            columns="2"
+            onsubmit={handleSubmit}
             onsuccess={handleSuccess}
-            mode="edit">
-            </lightning-record-form>
+            >
+        <div class="slds-grid">
+            <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="FirstName"></lightning-input-field>
+                <lightning-input-field field-name="Title"></lightning-input-field>
+                <lightning-input-field field-name="LeadSource"></lightning-input-field>
+                <lightning-input-field field-name="Company"></lightning-input-field>
+            </div>
+        <div class="slds-col slds-size_1-of-2">
+                <lightning-input-field field-name="LastName"></lightning-input-field>
+                <lightning-input-field field-name="Email"></lightning-input-field>
+                <lightning-input-field field-name="Industry"></lightning-input-field>
+                <lightning-input-field field-name="Phone"></lightning-input-field>
+            </div>
+        </div>
+        <div class="row dark-background slds-box slds-m-top_small slds-m-bottom_medium" align="center">
+            <lightning-button
+                variant="Neutral"
+                class="slds-m-left_small"
+                title="Destructive Action"
+                label="Cancel"
+                onclick={handleReset}>
+            </lightning-button>
+            <lightning-button
+                variant="Brand"
+                class="slds-m-left_small"
+                type="submit"
+                title="Primary Action"
+                name="save"
+                label="Update Lead">
+            </lightning-button>
+        </div>
+    </lightning-record-edit-form>
+        <p style="font-weight:bold;text-align:left;">
+            Completion Progress! {completionValue}
+            <span style="font-weight:bold;float:right;">
+            <lightning-progress-ring value={completionValue} variant="base-autocomplete" size='large'>
+            </lightning-progress-ring></span>
+        </p>
 </lightning-card>
 </template>

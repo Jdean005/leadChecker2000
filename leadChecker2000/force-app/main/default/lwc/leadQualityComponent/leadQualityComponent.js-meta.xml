@@ -11,6 +11,7 @@
         <targetConfig targets="lightning__RecordPage">
             <property name="toastTitle" label="Toast Title" type="String" required="true" default="Success!" description="Use this input to input the title of your toast message to display on success (typically - Success!)."/>
             <property name="toastBody" label="Toast Body" type="String" required="true" default="You succcessfully updated your lead using Lead Checker 2000!" description="Use this input to input the body of your toast message to display on success (typically - you did it!)."/>
+            <property name="componentTitle" label="Component Title" type="String" required="true" default="Lead Checker 2000!" description="Use this input to input the title of this component to make it relevant to your users!"/>
         </targetConfig>
  </targetConfigs>
 </LightningComponentBundle>
