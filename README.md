@@ -5,7 +5,7 @@ Record page LWC - can be used in the Lead Record Page in the Lightning Record Pa
 
 Functionality: 
 
-1. Displays the following fields from the Lead Object on a Lightning Card (leveraging: Lightning-record-form):
+1. Displays the following fields from the Lead Object on a Lightning Card (leveraging: Lightning-record-edit-form):
   a. Lead First Name
   b. Lead Last Name
   c. Lead Title
