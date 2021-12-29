@@ -16,10 +16,13 @@ export default class LeadQualityComponent extends LightningElement {
     @api objectApiName;
     @api toastTitle;
     @api toastBody;
+    @track progress;
     @track completionValue;
 
-    fields=[LEAD_FIRSTNAME_FIELD,LEAD_LASTNAME_FIELD,LEAD_TITLE_FIELD,LEAD_EMAIL_FIELD,LEAD_LEADSOURCE_FIELD,LEAD_INDUSTRY_FIELD,LEAD_COMPANY_FIELD,LEAD_PHONE_FIELD];
+// field reference list from above import functions
+fields=[LEAD_FIRSTNAME_FIELD,LEAD_LASTNAME_FIELD,LEAD_TITLE_FIELD,LEAD_EMAIL_FIELD,LEAD_LEADSOURCE_FIELD,LEAD_INDUSTRY_FIELD,LEAD_COMPANY_FIELD,LEAD_PHONE_FIELD];
 
+// initiate wire service 
  @wire(getRecord, {recordId: '$recordId',fields:[LEAD_FIRSTNAME_FIELD,LEAD_LASTNAME_FIELD,LEAD_TITLE_FIELD,LEAD_EMAIL_FIELD,LEAD_LEADSOURCE_FIELD,LEAD_INDUSTRY_FIELD,LEAD_COMPANY_FIELD,LEAD_PHONE_FIELD]})
 lead;
     get firstname() {
@@ -47,7 +50,21 @@ lead;
         return this.lead.data.fields.Phone.value;
     }
 
-    // handle reset is leveraged in the cancel button in the html file
+// handle load is leveraged on load of component to run initial calculations
+    handleLoad(event){
+        let progress = 0;
+        const inputFields = this.template.querySelectorAll(
+            'lightning-input-field' 
+        );
+        if(inputFields){
+            inputFields.forEach(field => {
+                if(field.value) progress++;
+            });
+            this.completionValue = progress*12.5;
+        }
+    }    
+
+// handle reset is leveraged in the cancel button in the html file
     handleReset(event) {
         const inputFields = this.template.querySelectorAll(
             'lightning-input-field'
@@ -64,19 +81,20 @@ lead;
         console.log(this.lead.recordId)
     } 
 
-    // WIP for counting percentage completion
+    // handle change event is leveraged in the field change to determine progress completion of component completion
     handleChange(event){
-        var total =0;
-        const totalfields = this.template.querySelectorAll(
-            'lightning-input-field'
+        let progress = 0;
+        const inputFields = this.template.querySelectorAll(
+            'lightning-input-field' 
         );
-        if(totalfields){
-            totalfields.forEach(field => {
-                total++;
+        if(inputFields){
+            inputFields.forEach(field => {
+                if(field.value) progress++;
             });
+            this.completionValue = progress*12.5;
         }
-        this.completionValue = total*12.5
     }
+
     // handle success is leveraged in the update lead button in the html file and used to power the toast option
     handleSuccess(event) {
         const evt = new ShowToastEvent({

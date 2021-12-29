@@ -12,19 +12,20 @@
             object-api-name={objectApiName}
             onsubmit={handleSubmit}
             onsuccess={handleSuccess}
+            onload={handleLoad}
             >
         <div class="slds-grid">
             <div class="slds-col slds-size_1-of-2">
                 <lightning-input-field field-name="FirstName" onchange={handleChange}></lightning-input-field>
                 <lightning-input-field field-name="Title" onchange={handleChange}></lightning-input-field>
-                <lightning-input-field field-name="LeadSource"></lightning-input-field>
-                <lightning-input-field field-name="Company"></lightning-input-field>
+                <lightning-input-field field-name="LeadSource" onchange={handleChange}></lightning-input-field>
+                <lightning-input-field field-name="Company" onchange={handleChange}></lightning-input-field>
             </div>
         <div class="slds-col slds-size_1-of-2">
-                <lightning-input-field field-name="LastName"></lightning-input-field>
-                <lightning-input-field field-name="Email"></lightning-input-field>
-                <lightning-input-field field-name="Industry"></lightning-input-field>
-                <lightning-input-field field-name="Phone"></lightning-input-field>
+                <lightning-input-field field-name="LastName" onchange={handleChange}></lightning-input-field>
+                <lightning-input-field field-name="Email" onchange={handleChange}></lightning-input-field>
+                <lightning-input-field field-name="Industry" onchange={handleChange}></lightning-input-field>
+                <lightning-input-field field-name="Phone" onchange={handleChange}></lightning-input-field>
             </div>
         </div>
         <div class="row dark-background slds-box slds-m-top_small slds-m-bottom_medium" align="center">
@@ -46,7 +47,7 @@
         </div>
     </lightning-record-edit-form>
         <p style="font-weight:bold;text-align:left;">
-            Completion Progress! {completionValue}
+            Completion Progress: {completionValue} %
             <span style="font-weight:bold;float:right;">
             <lightning-progress-ring value={completionValue} variant="base-autocomplete" size='large'>
             </lightning-progress-ring></span>
