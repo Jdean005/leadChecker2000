@@ -3,6 +3,8 @@ Record page LWC - can be used in the Lead Record Page in the Lightning Record Pa
 
 **The purpose of this project was to get familiar with LWC in LRP, leveraging wire services, and getting familiar with event handlers such as handlechange and handleSuccess**
 
+**Note, this is a flat component, meaning, the only way to add or remove fields is to modify the code. I am working on a dynamic version**
+
 Functionality: 
 
 1. Displays the following fields from the Lead Object on a Lightning Card (leveraging: Lightning-record-edit-form):
